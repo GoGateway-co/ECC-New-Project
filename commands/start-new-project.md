@@ -1,3 +1,7 @@
+---
+description: Initialize a new project from this ECC template. Creates roadmap, goals, and first session.
+---
+
 # /start-new-project
 
 Initialize a new project from this ECC template.
