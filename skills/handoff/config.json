@@ -1,0 +1,51 @@
+{
+  "roadmap": {
+    "path": "docs/roadmap.json",
+    "markdownPath": "docs/roadmap.md",
+    "sessionsDir": "docs/sessions"
+  },
+  "discovery": {
+    "scanFiles": [
+      "CLAUDE.md",
+      "README.md",
+      "package.json",
+      "docs/",
+      ".claude/skills/"
+    ]
+  },
+  "taskDetection": {
+    "highConfidenceThreshold": 0.8,
+    "mediumConfidenceThreshold": 0.5
+  },
+  "session": {
+    "singleSessionLineLimit": 60,
+    "multiSessionLineLimit": 80,
+    "longRunningLineLimit": 100,
+    "hardLineLimit": 120
+  },
+  "git": {
+    "commitPrefix": "docs: handoff",
+    "autoCommit": true,
+    "stageSpecificFiles": true
+  },
+  "hooks": {
+    "enableSessionStart": true,
+    "enableSessionEnd": true,
+    "enablePreCompact": true,
+    "envFlag": "HANDOFF_HOOKS_ENABLED"
+  },
+  "agents": {
+    "wave1": {
+      "gitDiffCollector": { "model": "haiku", "type": "Bash" },
+      "sessionHistoryReader": { "model": "haiku", "type": "Explore" },
+      "roadmapStateReader": { "model": "haiku", "type": "Explore" },
+      "decisionAnalyzer": { "model": "sonnet", "type": "general-purpose" }
+    },
+    "wave2": {
+      "cumulativeStateMerger": { "model": "haiku", "type": "general-purpose" },
+      "roadmapUpdater": { "model": "haiku", "type": "general-purpose" },
+      "continueBlockWriter": { "model": "haiku", "type": "general-purpose" },
+      "secretScanner": { "model": "haiku", "type": "general-purpose" }
+    }
+  }
+}
