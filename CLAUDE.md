@@ -1,4 +1,4 @@
-# New Project — ECC Project Template
+# ECC Project Template
 
 ## First-time setup
 Run `/start-new-project` to initialize this project's roadmap, goals, and first session.

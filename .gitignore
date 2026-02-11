@@ -39,3 +39,7 @@ styles/custom/
 
 # Handoff skill temporary files
 .handoff-*.tmp
+
+# Claude Code local state
+.claude/package-manager.json
+.claude/settings.local.json
